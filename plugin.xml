@@ -128,6 +128,9 @@
         <source-file src="src/ios/ImageTargets/VideoPlaybackViewController.mm" compiler-flags="-fno-objc-arc"/>
 		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
         <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" compiler-flags="-fno-objc-arc"/>
+        <header-file src="src/ios/ImageTargets/SampleMath.h" />
+        <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
+
 
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
