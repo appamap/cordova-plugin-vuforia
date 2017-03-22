@@ -116,7 +116,6 @@
         <header-file src="src/ios/ViewController.h" />
         <source-file src="src/ios/ViewController.mm" />
 
-
         <header-file src="src/ios/ImageTargets/ImageTargetsEAGLView.h" />
         <source-file src="src/ios/ImageTargets/ImageTargetsEAGLView.mm" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/ImageTargets/ImageTargetsViewController.h" />
@@ -130,7 +129,6 @@
 		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
         <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" compiler-flags="-fno-objc-arc"/>
 
-        
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
         <source-file src="src/ios/Utils/GLResourceHandler.h" />
@@ -140,7 +138,6 @@
         <resource-file src="src/ios/Utils/shaders/Line.vertsh" target-dir="com.mattrayner.vuforia/shader" />
         <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="com.mattrayner.vuforia" />
         <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="com.mattrayner.vuforia" />
-
 
         <resource-file src="targets/PluginTest.dat" target-dir="com.mattrayner.vuforia" />
         <resource-file src="targets/PluginTest.xml" target-dir="com.mattrayner.vuforia" />
