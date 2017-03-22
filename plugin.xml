@@ -121,8 +121,16 @@
         <source-file src="src/ios/ImageTargets/ImageTargetsEAGLView.mm" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/ImageTargets/ImageTargetsViewController.h" />
         <source-file src="src/ios/ImageTargets/ImageTargetsViewController.mm" compiler-flags="-fno-objc-arc"/>
+		<header-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.h" />
+        <source-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.mm" compiler-flags="-fno-objc-arc"/>
+		<header-file src="src/ios/ImageTargets/VideoPlaybackEAGLView.h" />
+        <source-file src="src/ios/ImageTargets/VideoPlaybackEAGLView.mm" compiler-flags="-fno-objc-arc"/>
+		<header-file src="src/ios/ImageTargets/VideoPlaybackViewController.h" />
+        <source-file src="src/ios/ImageTargets/VideoPlaybackViewController.mm" compiler-flags="-fno-objc-arc"/>
+		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
+        <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" compiler-flags="-fno-objc-arc"/>
 
-
+        
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
         <source-file src="src/ios/Utils/GLResourceHandler.h" />

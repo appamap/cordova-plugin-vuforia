@@ -1,5 +1,6 @@
 #import "ViewController.h"
-#import "ImageTargetsViewController.h"
+#import "VideoPlaybackViewController.h"
+//VideoPlaybackViewController
 
 #import <Vuforia/TrackerManager.h>
 #import <Vuforia/ObjectTracker.h>
@@ -7,7 +8,7 @@
 @interface ViewController ()
 
 @property BOOL launchedCamera;
-@property ImageTargetsViewController *imageTargetsViewController;
+@property VideoPlaybackViewController *imageTargetsViewController;
 
 @end
 
@@ -39,13 +40,19 @@
     [super viewDidAppear:animated];
 
     if (self.launchedCamera == false) {
-        self.imageTargetsViewController = [[ImageTargetsViewController alloc]  initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:self.vuforiaLicenseKey];
+        self.imageTargetsViewController = [[VideoPlaybackViewController alloc]  initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:self.vuforiaLicenseKey];
         self.launchedCamera = true;
 
-        self.imageTargetsViewController.imageTargetFile = [self.imageTargets objectForKey:@"imageTargetFile"];
-        self.imageTargetsViewController.imageTargetNames = [self.imageTargets objectForKey:@"imageTargetNames"];
+       // self.VideoPlaybackViewController.imageTargetFile = [self.imageTargets objectForKey:@"imageTargetFile"];
+        //self.VideoPlaybackViewController.imageTargetNames = [self.imageTargets objectForKey:@"imageTargetNames"];
 
         [self presentViewController:self.imageTargetsViewController animated:NO completion:nil];
+    }
+    else
+    {
+        
+        
+         [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
     }
 }
 
@@ -63,7 +70,7 @@
 }
 
 - (bool) updateTargets:(NSArray *)targets {
-    return [self.imageTargetsViewController doUpdateTargets:targets];
+   // return [self.imageTargetsViewController doUpdateTargets:targets];
 }
 
 - (void) close{

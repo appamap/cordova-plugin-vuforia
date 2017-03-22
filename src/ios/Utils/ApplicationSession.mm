@@ -121,6 +121,10 @@ namespace {
     // Initialising Vuforia is a potentially lengthy operation, so perform it on a
     // background thread
     [self performSelectorInBackground:@selector(initVuforiaInBackground) withObject:nil];
+   
+    
+       
+    
 }
 
 // Initialise Vuforia
@@ -189,6 +193,8 @@ namespace {
                 }
                 // Vuforia initialization error
                 [self.delegate onInitARDone:error];
+                Vuforia::onPause();
+                Vuforia::deinit();
             }
         }
     }
@@ -214,7 +220,7 @@ namespace {
     if ([alertView.title isEqualToString:@"iOS8 Camera Access Warning"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kDismissAppViewController" object:nil];
     }
-}
+}   
 
 // Resume Vuforia
 - (bool) resumeAR:(NSError **)error {
