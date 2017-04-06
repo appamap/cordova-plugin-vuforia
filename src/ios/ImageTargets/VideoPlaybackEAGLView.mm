@@ -203,7 +203,7 @@ namespace {
         
         switch (i) {
             case 0:
-                filename = @"VuforiaSizzleReel_1.mp4";
+                filename = @"comp.mp4";
                 break;
             default:
                 filename = @"VuforiaSizzleReel_2.mp4";
