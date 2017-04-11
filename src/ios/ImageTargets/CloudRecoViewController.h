@@ -9,10 +9,11 @@ countries.
 
 #import <UIKit/UIKit.h>
 #import "CloudRecoEAGLView.h"
-#import "ApplicationSession.h"
+#import "SampleApplicationSession.h"
+#import "SampleAppMenuViewController.h"
 #import <Vuforia/DataSet.h>
 
-@interface CloudRecoViewController : UIViewController <ApplicationControl, UIAlertViewDelegate> {
+@interface CloudRecoViewController : UIViewController <SampleApplicationControl, SampleAppMenuDelegate, UIAlertViewDelegate> {
     
     BOOL scanningMode;
     BOOL isVisualSearchOn;
@@ -28,20 +29,21 @@ countries.
 
 @property (nonatomic, strong) CloudRecoEAGLView* eaglView;
 @property (nonatomic, strong) UITapGestureRecognizer * tapGestureRecognizer;
-@property (nonatomic, strong) ApplicationSession * vapp;
-
-@property (retain) NSString *vuforiaLicenseKey;
+@property (nonatomic, strong) SampleApplicationSession * vapp;
 
 @property (nonatomic, readwrite) BOOL showingMenu;
+
 @property (retain) NSString *imageTargetFile;
 @property (retain) NSArray *imageTargetNames;
 @property (retain) NSString *overlayText;
 @property (retain) NSDictionary *overlayOptions;
+@property (retain) NSString *vuforiaLicenseKey;
+
 
 
 - (BOOL) isVisualSearchOn;
 - (void) toggleVisualSearch;
 - (id)initWithOverlayOptions:(NSDictionary *)overlayOptions vuforiaLicenseKey:(NSString *)vuforiaLicenseKey;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+-(void) buttonClicked:(UIButton*)sender;
 
 @end

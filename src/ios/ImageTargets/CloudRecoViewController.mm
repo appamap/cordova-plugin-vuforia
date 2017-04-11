@@ -8,7 +8,7 @@ countries.
 ===============================================================================*/
 
 #import "CloudRecoViewController.h"
-#import "VideoPlaybackAppDelegate.h"
+#import "VuforiaSamplesAppDelegate.h"
 #import <Vuforia/Vuforia.h>
 #import <Vuforia/TrackerManager.h>
 #import <Vuforia/ObjectTracker.h>
@@ -17,7 +17,9 @@ countries.
 #import <Vuforia/TargetFinder.h>
 #import <Vuforia/CameraDevice.h>
 
-
+#import "UnwindMenuSegue.h"
+#import "PresentMenuSegue.h"
+#import "SampleAppMenuViewController.h"
 
 static const char* const kAccessKey = "efce628c764f89aef73c7b5c0de7925cced8e11f";
 static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182";
@@ -34,61 +36,129 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
 @synthesize tapGestureRecognizer, vapp, eaglView;
 
 
-
 - (id)initWithOverlayOptions:(NSDictionary *)overlayOptions vuforiaLicenseKey:(NSString *)vuforiaLicenseKey
 {
+    
     NSLog(@"Vuforia Plugin :: INIT IMAGE TARGETS VIEW CONTROLLER");
     NSLog(@"Vuforia Plugin :: OVERLAY: %@", overlayOptions);
     NSLog(@"Vuforia Plugin :: LICENSE: %@", vuforiaLicenseKey);
     
     self.overlayOptions = overlayOptions;
     self.vuforiaLicenseKey = vuforiaLicenseKey;
-    self = [self initWithNibName:nil bundle:nil];
-    //self.delaying = false;
+    //self = [self initWithNibName:nil bundle:nil];
+    
+     [self loadOverlay];
+     [self scanlineStart];
+    
     
     return self;
+    
+      
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+
+
+-(void) buttonClicked:(UIButton*)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        NSLog(@"Vuoria Plugin :: vuforiaLicenseKey: %@", self.vuforiaLicenseKey);
-        vapp = [[ApplicationSession alloc] initWithDelegate:self vuforiaLicenseKey:self.vuforiaLicenseKey];
+    [self killAll];
+    [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
+}
+
+
+
+- (void) killAll
+{
+    
+    bool d = [self doUnloadTrackersData ] ;
+    bool s = [self doStopTrackers ] ;
+    
+    
+}
+
+-(void) loadOverlay {
+    if(!vapp.cameraIsStarted){
+        [self performSelector:@selector(loadOverlay) withObject:nil afterDelay:0.1];
+    }else{
         
-        // Custom initialization
-        self.title = @"Image Targets";
+        // set up the overlay back bar
         
-        // get whether the user opted to show the device icon
+        bool showDevicesIcon = [[self.overlayOptions objectForKey:@"showDevicesIcon"] integerValue];
         
-        /*
-        // Create the EAGLView with the screen dimensions
-        CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        viewFrame = screenBounds;
+        UIView *vuforiaBarView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 75)];
+        vuforiaBarView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
+        vuforiaBarView.tag = 8;
+        [self.view addSubview:vuforiaBarView];
         
-        // If this device has a retina display, scale the view bounds that will
-        // be passed to Vuforia; this allows it to calculate the size and position of
-        // the viewport correctly when rendering the video background
-        if (YES == vapp.isRetinaDisplay) {
-            viewFrame.size.width *= 2.0;
-            viewFrame.size.height *= 2.0;
+        // set up the close button
+        UIImage * buttonImage = [UIImage imageNamed:@"close-button.png"];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"" forState:UIControlStateNormal];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        button.frame = CGRectMake([[UIScreen mainScreen] bounds].size.width - 65, (vuforiaBarView.frame.size.height / 2.0) - 30, 60, 60);
+        button.tag = 10;
+        [vuforiaBarView addSubview:button];
+        
+        // if the device logo is set by the user
+        if(showDevicesIcon) {
+            UIImage *image = [UIImage imageNamed:@"iOSDevices.png"];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            imageView.frame = CGRectMake(10, (vuforiaBarView.frame.size.height / 2.0) - 25, 50, 50);
+            imageView.tag = 11;
+            [vuforiaBarView addSubview:imageView];
         }
         
-        dataSetCurrent = nil;
-        extendedTrackingIsOn = NO;
-         
-         */
+        // set up the detail label
+        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, vuforiaBarView.frame.size.width / 2 - button.frame.size.width, 60)];
+        [detailLabel setTextColor:[UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0]];
+        [detailLabel setBackgroundColor:[UIColor clearColor]];
+        [detailLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
         
+        // get and set the overlay text (if passed by user). if the text is empty, make the back bar transparent
+        NSString *overlayText = [self.overlayOptions objectForKey:@"overlayText"];
         
-        // a single tap will trigger a single autofocus operation
-        //tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(autofocus:)];
+        [detailLabel setText: overlayText];
+        detailLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        detailLabel.numberOfLines = 0;
+        detailLabel.tag = 9;
+        [detailLabel sizeToFit];
+        if([overlayText length] == 0) {
+            vuforiaBarView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0f];
+        }
         
-        // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
+        // if the device icon is to be shown, adapt the text to fit.
+        CGRect detailFrame = detailLabel.frame;
+        if(showDevicesIcon) {
+            detailFrame = CGRectMake(70, 10, [[UIScreen mainScreen] bounds].size.width - 130, detailLabel.frame.size.height);
+        }
+        else {
+            detailFrame = CGRectMake(20, 10, [[UIScreen mainScreen] bounds].size.width - 130, detailLabel.frame.size.height);
+        }
+        detailLabel.frame = detailFrame;
+        [detailLabel sizeToFit];
+        [vuforiaBarView addSubview:detailLabel];
         
-        //[self loadOverlay];
+        if(detailLabel.frame.size.height > button.frame.size.height) {
+            CGRect vuforiaFrame = vuforiaBarView.frame;
+            vuforiaFrame.size.height = detailLabel.frame.size.height + 25;
+            vuforiaBarView.frame = vuforiaFrame;
+            
+            CGRect buttonFrame = button.frame;
+            buttonFrame.origin.y = detailLabel.frame.size.height / 3.0;
+            button.frame = buttonFrame;
+            
+            if(showDevicesIcon) {
+                UIImageView *imageView = (UIImageView *)[eaglView viewWithTag:11];
+                CGRect imageFrame = imageView.frame;
+                imageFrame.origin.y = detailLabel.frame.size.height / 3.0;
+                imageView.frame = imageFrame;
+            }
+        }
     }
-    return self;
 }
+
+
 
 
 
@@ -135,21 +205,18 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     flashEnabled = NO;
     frontCameraEnabled = NO;
     
-    vapp = [[ApplicationSession alloc] initWithDelegate:self vuforiaLicenseKey:self.vuforiaLicenseKey];
+    vapp = [[SampleApplicationSession alloc] initWithDelegate:self];
     
     CGRect viewFrame = [self getCurrentARViewFrame];
     
-    //eaglView = [[CloudRecoEAGLView alloc] initWithFrame:viewFrame appSession:vapp viewController:self];
-    //[self setView:eaglView];
+    eaglView = [[CloudRecoEAGLView alloc] initWithFrame:viewFrame appSession:vapp viewController:self];
     
     
-    eaglView = [[CloudRecoEAGLView alloc] initWithFrame:viewFrame rootViewController:self appSession:vapp];
     [self setView:eaglView];
     
     
-    
-    VideoPlaybackAppDelegate *appDelegate = (VideoPlaybackAppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.glResourceHandler = eaglView;
+    //VuforiaSamplesAppDelegate *appDelegate = (VuforiaSamplesAppDelegate*)[[UIApplication sharedApplication] delegate];
+    //appDelegate.glResourceHandler = eaglView;
     
     
     [self scanlineCreate];
@@ -189,11 +256,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
      object:nil];
     
     // initialize AR
-    //[vapp initAR:Vuforia::GL_20 orientation:self.interfaceOrientation];
-    
-     [vapp initAR:Vuforia::GL_20 ARViewBoundsSize:viewFrame.size orientation:self.interfaceOrientation];
-    
-    
+    [vapp initAR:Vuforia::GL_20 orientation:self.interfaceOrientation];
 
     // show loading animation while AR is being initialized
     [self showLoadingAnimation];
@@ -248,8 +311,8 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     // EAGLView should finish any OpenGL ES commands
     [self finishOpenGLESCommands];
     
-    VideoPlaybackAppDelegate *appDelegate = (VideoPlaybackAppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.glResourceHandler = nil;
+    //VuforiaSamplesAppDelegate *appDelegate = (VuforiaSamplesAppDelegate*)[[UIApplication sharedApplication] delegate];
+    //appDelegate.glResourceHandler = nil;
     
     [super viewWillDisappear:animated];
 }
@@ -576,7 +639,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     // Get the tracker manager:
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
     
-    NSLog(@"Sff");
+    ;
     
     // Get the image tracker:
     Vuforia::ObjectTracker* objectTracker = static_cast<Vuforia::ObjectTracker*>(trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
@@ -601,6 +664,36 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
         for (int i = 0; i < finder->getResultCount(); ++i)
         {
             const Vuforia::TargetSearchResult* result = finder->getResult(i);
+            
+            
+            //liams change, this is the meta data object
+            
+            /*
+             
+             
+             {
+             "array": [
+             1,
+             2,
+             3
+             ],
+             "boolean": true,
+             "null": null,
+             "number": 123,
+             "object": {
+             “url”: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+             "c": "d",
+             "e": "f"
+             },
+             "string": "Hello World"
+             }
+             
+             
+             */
+            
+            
+            
+             NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
             
             // Check if this target is suitable for tracking:
             if (result->getTrackingRating() > 0)
@@ -632,6 +725,11 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     [self toggleVisualSearch:isVisualSearchOn];
 }
 
+
+
+
+
+
 - (void) toggleVisualSearch:(BOOL)visualSearchOn
 {
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
@@ -642,7 +740,13 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
         return;
     }
     
+    
+    //Vuforia::TrackableResult* tr = state.getTrackableResult(0);
+    
     Vuforia::TargetFinder* targetFinder = objectTracker->getTargetFinder();
+    
+    
+    
     if (visualSearchOn == NO)
     {
         NSLog(@"Starting target finder");
@@ -740,7 +844,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
 
 
 #pragma mark - Navigation
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue isKindOfClass:[PresentMenuSegue class]]) {
         UIViewController *dest = [segue destinationViewController];
@@ -758,8 +862,6 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
         }
     }
 }
- 
- */
 
 #pragma mark - scan line
 const int VIEW_SCAN_LINE_TAG = 1111;

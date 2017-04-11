@@ -101,14 +101,13 @@ namespace {
 //------------------------------------------------------------------------------
 #pragma mark - Lifecycle
 
-- (id)initWithFrame:(CGRect)frame rootViewController:(CloudRecoViewController *) rootViewController appSession:(ApplicationSession *) app
-//- (id)initWithFrame:(CGRect)frame  appSession:(ApplicationSession *) app viewController:(CloudRecoViewController *) aViewController
+- (id)initWithFrame:(CGRect)frame  appSession:(SampleApplicationSession *) app viewController:(CloudRecoViewController *) aViewController
 {
     self = [super initWithFrame:frame];
     
     if (self) {
         vapp = app;
-        viewController = rootViewController;
+        viewController = aViewController;
         
         // Enable retina mode if available on this device
         if (YES == [vapp isRetinaDisplay]) {
@@ -239,6 +238,7 @@ namespace {
     for (int i = 0; i < state.getNumTrackableResults(); ++i) {
         // Get the trackable
         const Vuforia::TrackableResult* result = state.getTrackableResult(i);
+        
         Vuforia::Matrix44F modelViewMatrix = Vuforia::Tool::convertPose2GLMatrix(result->getPose());
         
         // OpenGL 2
@@ -277,6 +277,10 @@ namespace {
     [self presentFramebuffer];
     
     if (state.getNumTrackableResults() > 0) {
+        
+        
+        
+        
         // we have a trackable so we stop the finder if it was on
         if ([viewController isVisualSearchOn]) {
             [viewController toggleVisualSearch];

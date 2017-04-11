@@ -15,7 +15,7 @@ countries.
 #import <Vuforia/Vectors.h>
 
 #import "Texture.h"
-#import "ApplicationSession.h"
+#import "SampleApplicationSession.h"
 #import "SampleGLResourceHandler.h"
 #import "SampleAppRenderer.h"
 
@@ -62,6 +62,8 @@ static const int kNumAugmentationTextures = 1;
     GLint mvpMatrixHandle;
     GLint texSampler2DHandle;
     
+    const Vuforia::TrackableResult* trackableResult;
+    
     // Texture used when rendering augmentation
     Texture* augmentationTexture[kNumAugmentationTextures];
 
@@ -70,11 +72,11 @@ static const int kNumAugmentationTextures = 1;
     SampleAppRenderer *sampleAppRenderer;
 }
 
-@property (nonatomic, weak) ApplicationSession * vapp;
+@property (nonatomic, weak) SampleApplicationSession * vapp;
 @property (nonatomic, weak) CloudRecoViewController * viewController;
 
 
-- (id)initWithFrame:(CGRect)frame rootViewController:(CloudRecoViewController *) rootViewController appSession:(ApplicationSession *) app;
+- (id)initWithFrame:(CGRect)frame appSession:(SampleApplicationSession *) app viewController:(CloudRecoViewController *) viewController;
 - (void)finishOpenGLESCommands;
 - (void)freeOpenGLESResources;
 - (void)configureVideoBackgroundWithViewWidth:(float)viewWidth andHeight:(float)viewHeight;

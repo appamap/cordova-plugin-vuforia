@@ -12,6 +12,46 @@
 
 @implementation VuforiaPlugin
 
+- (void) cordovaInitVuforia:(CDVInvokedUrlCommand *)command {
+    
+    NSLog(@"Vuforia Plugin :: INIT!!");
+//
+//    NSLog(@"Arguments: %@", command.arguments);
+//    NSLog(@"KEY: %@", [command.arguments objectAtIndex:3]);
+    
+//    NSString *overlayText = ([command.arguments objectAtIndex:2] == (id)[NSNull null]) ? @"" : [command.arguments objectAtIndex:2];
+//    
+//    NSDictionary *overlayOptions =  [[NSDictionary alloc] initWithObjectsAndKeys: overlayText, @"overlayText", [NSNumber numberWithBool:[[command.arguments objectAtIndex:5] integerValue]], @"showDevicesIcon", nil];
+    
+//    self.autostopOnImageFound = [[command.arguments objectAtIndex:6] integerValue];
+    
+//    [self startVuforiaWithImageTargetFile:[command.arguments objectAtIndex:0] imageTargetNames: [command.arguments objectAtIndex:1] overlayOptions: overlayOptions vuforiaLicenseKey: [command.arguments objectAtIndex:3]];
+    vuforia_key=([command.arguments objectAtIndex:0]);
+    vuforia_access_key=([command.arguments objectAtIndex:1]);
+    vuforia_secret_key=([command.arguments objectAtIndex:2]);
+    vuforia_command_id=command.callbackId;
+    vplug=self;
+    
+    CDVPluginResult *pluginResult = [ CDVPluginResult
+                                     resultWithStatus    : CDVCommandStatus_OK
+                                     messageAsString : @"Success"
+                                     ];
+    [pluginResult setKeepCallbackAsBool:YES];
+    presult=pluginResult;
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.command.callbackId];
+    
+    
+    self.command = command;
+    
+//    self.startedVuforia = true;
+}
+
+- (void) cordovaRequestClose:(CDVInvokedUrlCommand *)command {
+    NSLog(@"Vuforia Plugin :: CLOSE REQUEST!!!!");
+    //[self closeRequest];
+    [self VP_closeView];
+}
+
 - (void) cordovaStartVuforia:(CDVInvokedUrlCommand *)command {
 
     NSLog(@"Vuforia Plugin :: Start plugin");
@@ -115,6 +155,8 @@
 - (void)imageMatched:(NSNotification *)notification {
 
     NSDictionary* userInfo = notification.userInfo;
+    
+    NSLog(@"bingo");
 
     NSLog(@"Vuforia Plugin :: image matched");
     NSDictionary* jsonObj = @{@"status": @{@"imageFound": @true, @"message": @"Image Found."}, @"result": @{@"imageName": userInfo[@"result"][@"imageName"]}};

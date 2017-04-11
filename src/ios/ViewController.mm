@@ -1,5 +1,7 @@
 #import "ViewController.h"
-#import "VideoPlaybackViewController.h"
+#import "CloudRecoViewController.h"
+#import "VuforiaPlugin.h"
+
 //VideoPlaybackViewController
 
 #import <Vuforia/TrackerManager.h>
@@ -8,12 +10,18 @@
 @interface ViewController ()
 
 @property BOOL launchedCamera;
-@property VideoPlaybackViewController *imageTargetsViewController;
+@property CloudRecoViewController *imageTargetsViewController;
+
 
 @end
 
 @implementation ViewController
-
+NSString *vuforia_key=@"";
+NSString *vuforia_access_key=@"";
+NSString *vuforia_secret_key=@"";
+NSString *vuforia_command_id=@"";
+VuforiaPlugin *vplug;
+CDVPluginResult *presult;
 
 -(id)initWithFileName:(NSString *)fileName targetNames:(NSArray *)imageTargetNames overlayOptions:( NSDictionary *)overlayOptions vuforiaLicenseKey:(NSString *)vuforiaLicenseKey {
 
@@ -40,7 +48,9 @@
     [super viewDidAppear:animated];
 
     if (self.launchedCamera == false) {
-        self.imageTargetsViewController = [[VideoPlaybackViewController alloc]  initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:self.vuforiaLicenseKey];
+        
+        
+        self.imageTargetsViewController = [[CloudRecoViewController alloc] initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:@"dd"];
         self.launchedCamera = true;
 
        // self.VideoPlaybackViewController.imageTargetFile = [self.imageTargets objectForKey:@"imageTargetFile"];
@@ -50,8 +60,6 @@
     }
     else
     {
-        
-        
          [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
     }
 }
