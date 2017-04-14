@@ -717,26 +717,26 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
             }
 
             // Check if this target is suitable for tracking:
-            if (result->getTrackingRating() > 0)
-            {
-                // Create a new Trackable from the result:
-                Vuforia::Trackable* newTrackable = finder->enableTracking(*result);
-                if (newTrackable != 0)
-                {
-                    //  Avoid entering on ContentMode when a bad target is found
-                    //  (Bad Targets are targets that are exists on the CloudReco database but not on our
-                    //  own book database)
-                    NSLog(@"Successfully created new trackable '%s' with rating '%d'.",
-                          newTrackable->getName(), result->getTrackingRating());
-                    if (extendedTrackingEnabled) {
-                        newTrackable->startExtendedTracking();
-                    }
-                }
-                else
-                {
-                    NSLog(@"Failed to create new trackable.");
-                }
-            }
+            // if (result->getTrackingRating() > 0)
+            // {
+            //     // Create a new Trackable from the result:
+            //     Vuforia::Trackable* newTrackable = finder->enableTracking(*result);
+            //     if (newTrackable != 0)
+            //     {
+            //         //  Avoid entering on ContentMode when a bad target is found
+            //         //  (Bad Targets are targets that are exists on the CloudReco database but not on our
+            //         //  own book database)
+            //         NSLog(@"Successfully created new trackable '%s' with rating '%d'.",
+            //               newTrackable->getName(), result->getTrackingRating());
+            //         if (extendedTrackingEnabled) {
+            //             newTrackable->startExtendedTracking();
+            //         }
+            //     }
+            //     else
+            //     {
+            //         NSLog(@"Failed to create new trackable.");
+            //     }
+            // }
             
             
         }
