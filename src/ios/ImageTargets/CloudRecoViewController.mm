@@ -16,10 +16,12 @@ countries.
 #import <Vuforia/ImageTarget.h>
 #import <Vuforia/TargetFinder.h>
 #import <Vuforia/CameraDevice.h>
-
+#import "VuforiaPlugin.h"
 #import "UnwindMenuSegue.h"
 #import "PresentMenuSegue.h"
 #import "SampleAppMenuViewController.h"
+#import "ViewController.h"
+
 
 static const char* const kAccessKey = "efce628c764f89aef73c7b5c0de7925cced8e11f";
 static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182";
@@ -481,9 +483,10 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     }
     
     NSDate *start = [NSDate date];
-    
+    const char *c_access=[vuforia_access_key UTF8String];
+    const char *c_secret=[vuforia_secret_key UTF8String];
     // Start initialization:
-    if (targetFinder->startInit(kAccessKey, kSecretKey))
+    if (targetFinder->startInit(c_access, c_secret))
     {
         targetFinder->waitUntilInitFinished();
         
@@ -694,7 +697,25 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
             
             
              NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
+            NSData *data = [meta dataUsingEncoding:NSUTF8StringEncoding];
+            id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            id jso=[json objectForKey:@"object"];
+            NSString *url=[NSString stringWithFormat:@"%@",[jso objectForKey:@"url"]];
+//            NSString *url=@"https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr";
+//            vuforia_cs_key=@"a";
             
+//            CDVPluginResult* pluginResult = nil;
+            if ([url isEqual:[NSNull null]]){
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CDVPluginResult *pluginResult = [ CDVPluginResult
+                                                     resultWithStatus    : CDVCommandStatus_OK
+                                                     messageAsString: url
+                                                     ];
+                    [vplug.commandDelegate sendPluginResult:pluginResult callbackId:vuforia_command_id];
+                });
+            }
+
             // Check if this target is suitable for tracking:
             if (result->getTrackingRating() > 0)
             {
@@ -716,6 +737,8 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
                     NSLog(@"Failed to create new trackable.");
                 }
             }
+            
+            
         }
     }
     

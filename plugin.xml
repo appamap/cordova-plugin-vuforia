@@ -163,6 +163,8 @@
 
             <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="com.mattrayner.vuforia" />
             <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="com.mattrayner.vuforia" />
+            <resource-file src="src/ios/Utils/shaders/Background.fragsh" target-dir="com.mattrayner.vuforia" />
+            <resource-file src="src/ios/Utils/shaders/Background.vertsh" target-dir="com.mattrayner.vuforia" />
             <resource-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" target-dir="com.mattrayner.vuforia"/>
             
             <header-file src="src/ios/ImageTargets/Teapot.h" />
