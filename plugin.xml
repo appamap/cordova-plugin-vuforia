@@ -91,10 +91,10 @@
                      target-dir="src/java/com/mattrayner/vuforia/app/utils" />
 
         <!-- Include our resources -->
-        <resource-file src="targets/PluginTest.dat"
+        <!--<resource-file src="targets/PluginTest.dat"
                        target="assets/PluginTest.dat" />
         <resource-file src="targets/PluginTest.xml"
-                       target="assets/PluginTest.xml" />
+                       target="assets/PluginTest.xml" />-->
     </platform>
 
     <!-- ios -->
@@ -150,8 +150,8 @@
             <source-file src="src/ios/ImageTargets/SampleApplicationSession.mm" />
             <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
             <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
-            <header-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
             <header-file src="src/ios/ImageTargets/SampleApplicationUtils.h" />
+            <source-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
 
             <header-file src="src/ios/ImageTargets/SampleAppMenuViewController.h" />
             <source-file src="src/ios/ImageTargets/SampleAppMenuViewController.mm" />
