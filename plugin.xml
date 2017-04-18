@@ -287,6 +287,8 @@
         <resource-file src="targets/PluginTest.xml" target-dir="com.mattrayner.vuforia" />-->
 
         <resource-file src="src/ios/Assets/ImageTargets/close-button.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/scanline@2x.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/scanline.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/iOSDevices.png" target-dir="Resources" />
     </platform>
 
