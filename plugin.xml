@@ -161,11 +161,11 @@
             <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
             <header-file src="src/ios/ImageTargets/SampleGLResourceHandler.h" />
 
-            <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="com.mattrayner.vuforia" />
-            <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="com.mattrayner.vuforia" />
-            <resource-file src="src/ios/Utils/shaders/Background.fragsh" target-dir="com.mattrayner.vuforia" />
-            <resource-file src="src/ios/Utils/shaders/Background.vertsh" target-dir="com.mattrayner.vuforia" />
-            <resource-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" target-dir="com.mattrayner.vuforia"/>
+            <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="Resources" />
+            <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="Resources" />
+            <resource-file src="src/ios/Utils/shaders/Background.fragsh" target-dir="Resources" />
+            <resource-file src="src/ios/Utils/shaders/Background.vertsh" target-dir="Resources" />
+            <resource-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" target-dir="Resources"/>
             
             <header-file src="src/ios/ImageTargets/Teapot.h" />
             <header-file src="src/ios/ImageTargets/Texture.h" />
