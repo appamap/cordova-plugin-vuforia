@@ -1,11 +1,11 @@
 /*===============================================================================
-Copyright (c) 2016 PTC Inc. All Rights Reserved.
-
-Copyright (c) 2012-2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
-
-Vuforia is a trademark of PTC Inc., registered in the United States and other 
-countries.
-===============================================================================*/
+ Copyright (c) 2016 PTC Inc. All Rights Reserved.
+ 
+ Copyright (c) 2012-2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
+ 
+ Vuforia is a trademark of PTC Inc., registered in the United States and other
+ countries.
+ ===============================================================================*/
 
 #import "CloudRecoViewController.h"
 #import "VuforiaSamplesAppDelegate.h"
@@ -49,13 +49,13 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     self.vuforiaLicenseKey = vuforiaLicenseKey;
     //self = [self initWithNibName:nil bundle:nil];
     
-     [self loadOverlay];
-     [self scanlineStart];
+    [self loadOverlay];
+    [self scanlineStart];
     
     
     return self;
     
-      
+    
 }
 
 
@@ -259,7 +259,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     
     // initialize AR
     [vapp initAR:Vuforia::GL_20 orientation:self.interfaceOrientation];
-
+    
     // show loading animation while AR is being initialized
     [self showLoadingAnimation];
 }
@@ -433,7 +433,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     }
     
     UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc]
-                                                  initWithFrame:indicatorBounds];
+                                                 initWithFrame:indicatorBounds];
     
     loadingIndicator.tag  = 1;
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
@@ -530,7 +530,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
     
     Vuforia::ObjectTracker* objectTracker = static_cast<Vuforia::ObjectTracker*>(
-                                                                           trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
+                                                                                 trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
     if (objectTracker == 0) {
         NSLog(@"Failed to start Object Tracker, as it is null.");
         return NO;
@@ -569,13 +569,15 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
         NSLog(@"Error initializing AR:%@", [initError description]);
         
         dispatch_async( dispatch_get_main_queue(), ^{
+            [self killAll];
+            [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:[initError localizedDescription]
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                            message:[initError localizedDescription]
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles:nil];
+//            [alert show];
         });
     }
 }
@@ -585,7 +587,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     // Stop the tracker:
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
     Vuforia::ObjectTracker* objectTracker = static_cast<Vuforia::ObjectTracker*>(
-                                                                           trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
+                                                                                 trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
     if(objectTracker != 0) {
         objectTracker->stop();
         
@@ -684,7 +686,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
              "null": null,
              "number": 123,
              "object": {
-             “url”: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+             Ă˘ÂÂurlĂ˘ÂÂ: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
              "c": "d",
              "e": "f"
              },
@@ -696,15 +698,15 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
             
             
             
-             NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
+            NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
             NSData *data = [meta dataUsingEncoding:NSUTF8StringEncoding];
             id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             id jso=[json objectForKey:@"object"];
             NSString *url=[NSString stringWithFormat:@"%@",[jso objectForKey:@"url"]];
-//            NSString *url=@"https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr";
-//            vuforia_cs_key=@"a";
+            //            NSString *url=@"https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr";
+            //            vuforia_cs_key=@"a";
             
-//            CDVPluginResult* pluginResult = nil;
+            //            CDVPluginResult* pluginResult = nil;
             if ([url isEqual:[NSNull null]]){
             }else{
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -715,7 +717,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
                     [vplug.commandDelegate sendPluginResult:pluginResult callbackId:vuforia_command_id];
                 });
             }
-
+            
             // Check if this target is suitable for tracking:
             // if (result->getTrackingRating() > 0)
             // {
@@ -891,7 +893,7 @@ const int VIEW_SCAN_LINE_TAG = 1111;
 
 - (void) scanlineCreate {
     CGRect frame = [[UIScreen mainScreen] bounds];
-
+    
     UIImageView *scanLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 50)];
     scanLineView.tag = VIEW_SCAN_LINE_TAG;
     scanLineView.contentMode = UIViewContentModeScaleToFill;

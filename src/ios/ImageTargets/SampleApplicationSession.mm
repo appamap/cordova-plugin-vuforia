@@ -9,6 +9,7 @@ Copyright (c) 2015-2016 PTC Inc. All Rights Reserved.
 
 #import "SampleApplicationSession.h"
 #import "SampleApplicationUtils.h"
+#import "ViewController.h"
 #import <Vuforia/Vuforia.h>
 #import <Vuforia/Vuforia_iOS.h>
 #import <Vuforia/Tool.h>
@@ -148,7 +149,10 @@ namespace {
 {
     // Background thread must have its own autorelease pool
     @autoreleasepool {
-        Vuforia::setInitParameters(mVuforiaInitFlags,"Af2i8BT/////AAAAASoF8i4BBklQv2w2gSsqd992i56nqMMRJ9UaE3ipEQdb0JzladxOfT3gTqNDeBltx8eejdV0DvA0CylpMc/Hpz6MI6skxC4yXpqbBQ24IT8nx7GZvIAAFs0KFbKijh2Qndw/nHAsHjrzfuQw35ug8SifdIQE3Q7HaqDFI8hCskDRgO9WSIfeuFiIxCX33wwEMYUU6AOkavoImXL6z+oD19/KwHfvInFqKb60uIN34h+h04WmjaW3L734GDN+Bi4u/FxlFsIFNLzWOHgDBtf6WHLnzoYl6JvJOZP2hVQJ1GCDqGoCMZKorYG+E0qlkeQt7lBIz9T7IzXJX5XvRJUb6aKByfCgn4Z5iDXgBYNyHolV");
+//        Vuforia::setInitParameters(mVuforiaInitFlags,"Af2i8BT/////AAAAASoF8i4BBklQv2w2gSsqd992i56nqMMRJ9UaE3ipEQdb0JzladxOfT3gTqNDeBltx8eejdV0DvA0CylpMc/Hpz6MI6skxC4yXpqbBQ24IT8nx7GZvIAAFs0KFbKijh2Qndw/nHAsHjrzfuQw35ug8SifdIQE3Q7HaqDFI8hCskDRgO9WSIfeuFiIxCX33wwEMYUU6AOkavoImXL6z+oD19/KwHfvInFqKb60uIN34h+h04WmjaW3L734GDN+Bi4u/FxlFsIFNLzWOHgDBtf6WHLnzoYl6JvJOZP2hVQJ1GCDqGoCMZKorYG+E0qlkeQt7lBIz9T7IzXJX5XvRJUb6aKByfCgn4Z5iDXgBYNyHolV");
+        const char *c_key=[vuforia_key UTF8String];
+        
+        Vuforia::setInitParameters(mVuforiaInitFlags, c_key);
         
         // Vuforia::init() will return positive numbers up to 100 as it progresses
         // towards success.  Negative numbers indicate error conditions
