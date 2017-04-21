@@ -572,12 +572,12 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
             [self killAll];
             [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
             
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-//                                                            message:[initError localizedDescription]
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"OK"
-//                                                  otherButtonTitles:nil];
-//            [alert show];
+            //            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+            //                                                            message:[initError localizedDescription]
+            //                                                           delegate:self
+            //                                                  cancelButtonTitle:@"OK"
+            //                                                  otherButtonTitles:nil];
+            //            [alert show];
         });
     }
 }
