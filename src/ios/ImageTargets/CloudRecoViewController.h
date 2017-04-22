@@ -17,6 +17,8 @@ countries.
 
 @interface CloudRecoViewController : UIViewController <SampleApplicationControl, SampleAppMenuDelegate, UIAlertViewDelegate> {
     
+    
+    
     BOOL scanningMode;
     BOOL isVisualSearchOn;
     

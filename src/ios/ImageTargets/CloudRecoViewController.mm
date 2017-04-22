@@ -38,6 +38,8 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
 @synthesize tapGestureRecognizer, vapp, eaglView;
 
 
+
+
 - (id)initWithOverlayOptions:(NSDictionary *)overlayOptions vuforiaLicenseKey:(NSString *)vuforiaLicenseKey
 {
     
