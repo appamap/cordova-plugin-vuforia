@@ -23,6 +23,9 @@
 #import "ViewController.h"
 
 
+//liam changed
+
+
 static const char* const kAccessKey = "efce628c764f89aef73c7b5c0de7925cced8e11f";
 static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182";
 
@@ -688,7 +691,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
              "null": null,
              "number": 123,
              "object": {
-             Ă˘ÂÂurlĂ˘ÂÂ: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+             ÄËĂÂĂÂurlÄËĂÂĂÂ: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
              "c": "d",
              "e": "f"
              },
