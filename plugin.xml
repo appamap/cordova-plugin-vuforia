@@ -53,6 +53,14 @@
         <source-file src="src/android/VuforiaPlugin.java" target-dir="src/com/vuforia" />
 
         <!-- Assets -->
+        <resource-file src="src/android/res/values/arcode_strings.xml" target="res/values/arcode_strings.xml" />
+        <resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/res/values/facebookconnect.xml" target="res/values/facebookconnect.xml" />
+        <resource-file src="src/android/res/values/parseplugin.xml" target="res/values/parseplugin.xml" />
+        <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
+        
         <!--<resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />-->
         <resource-file src="src/android/res/drawable/devices.png" target="res/drawable/devices.png" />
         <resource-file src="src/android/res/drawable-hdpi/devices.png" target="res/drawable-hdpi/devices.png" />
