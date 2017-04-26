@@ -92,11 +92,11 @@
         <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/" />
         <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/" />
 
-        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/ui/SampleAppMenu/SampleAppMenu.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
-        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/ui/SampleAppMenu/SampleAppMenuAnimator.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
-        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/ui/SampleAppMenu/SampleAppMenuGroup.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
-        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/ui/SampleAppMenu/SampleAppMenuInterface.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
-        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/app/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
         
         
         <!--<source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
