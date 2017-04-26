@@ -60,8 +60,17 @@
         <resource-file src="src/android/res/values/parseplugin.xml" target="res/values/parseplugin.xml" />
         <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
         <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
-        
-        <!--<resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />-->
+
+
+        <resource-file src="src/android/res/layout/sample_app_menu_layer.xml" target="res/layout/sample_app_menu_layer.xml" />
+        <resource-file src="src/android/res/layout/camera_overlay_with_scanline.xml" target="res/layout/camera_overlay_with_scanline.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group.xml" target="res/layout/sample_app_menu_group.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group_divider.xml" target="res/layout/sample_app_menu_group_divider.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group_radio_button.xml" target="res/layout/sample_app_menu_group_radio_button.xml" />
+
+        <resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />
+
+
         <resource-file src="src/android/res/drawable/devices.png" target="res/drawable/devices.png" />
         <resource-file src="src/android/res/drawable-hdpi/devices.png" target="res/drawable-hdpi/devices.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/devices.png" target="res/drawable-xxhdpi/devices.png" />
