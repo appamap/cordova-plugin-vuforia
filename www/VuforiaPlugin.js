@@ -1,4 +1,5 @@
-cordova.define("cordova-plugin-vuforia.VuforiaPlugin", function(require, exports, module) { /**
+//cordova.define("cordova-plugin-vuforia.VuforiaPlugin", function(require, exports, module) {
+/**
  * VuforiaPlugin module, used within our Cordova front-end to both start and stop a Vuforia image recognition session.
  *
  * @type {object}
@@ -10,26 +11,26 @@ var VuforiaPlugin = {
    */
   pluginClass: 'VuforiaPlugin',
 
-               
+
    initVuforia: function(options, successCallback, errorCallback){
        var exec_options,
        vuforia_key = options.vuforia_key,
        vuforia_access_key = options.vuforia_access_key,
        vuforia_secret_key = options.vuforia_secret_key;
-       
+
        if (typeof options.autostopOnImageFound !== "undefined" && options.autostopOnImageFound !==null && !options.autostopOnImageFound)
        autostopOnImageFound = false;
-       
+
        exec_options = [ vuforia_key , vuforia_access_key, vuforia_secret_key];
-       
+
        VuforiaPlugin.exec(successCallback, errorCallback, 'cordovaInitVuforia', exec_options);
    },
-               
+
    requestClose: function(successCallback, errorCallback){
        VuforiaPlugin.exec(successCallback, errorCallback, 'cordovaRequestClose', []);
    },
-               
-               
+
+
   /**
    * Start a new Vuforia image recognition session on the user's device.
    *
