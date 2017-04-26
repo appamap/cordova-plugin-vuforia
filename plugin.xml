@@ -53,6 +53,7 @@
         <source-file src="src/android/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
 
         <!-- Assets -->
+        <resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />
         <resource-file src="src/android/res/drawable/devices.png" target="res/drawable/devices.png" />
         <resource-file src="src/android/res/drawable-hdpi/devices.png" target="res/drawable-hdpi/devices.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/devices.png" target="res/drawable-xxhdpi/devices.png" />
@@ -88,8 +89,15 @@
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/Texture.java" target-dir="src/java/com/vuforia/app/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/VideoBackgroundShader.java" target-dir="src/java/com/vuforia/app/samples/SampleApplication/utils/" />
 
-        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target-dir="src/java/com/vuforia/app/samples/SampleApplication/utils/" />
-        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target-dir="src/java/com/vuforia/app/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/app/CloudRecognition/" />
+
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/java/com/vuforia/app/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        
         
         <!--<source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
                      target-dir="src/java/com/vuforia/app" />
@@ -113,6 +121,10 @@
                        target="assets/PluginTest.dat" />
         <resource-file src="targets/PluginTest.xml"
                        target="assets/PluginTest.xml" />
+
+        <resource-file src="targets/PluginTest.xml"
+                       target="assets/PluginTest.xml" />
+                       
     </platform>
 
     <!-- ios -->
@@ -169,6 +181,9 @@
 
         <resource-file src="src/ios/Assets/ImageTargets/close-button.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/iOSDevices.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/ImageTargets/scanline.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/ImageTargets/scanline@2x.png" target-dir="Resources" />
+        
     </platform>
 
     <dependency id="cordova-plugin-vuforia-sdk" version="6.x.x" />
