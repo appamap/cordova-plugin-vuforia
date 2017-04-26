@@ -100,7 +100,7 @@
         <source-file src="src/android/java/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/com/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
         
         
-        <source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
+        <!--<source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
                      target-dir="src/com/vuforia/app" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/ApplicationControl.java"
                      target-dir="src/com/vuforia/app" />
@@ -115,7 +115,7 @@
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/ApplicationGLView.java"
                      target-dir="src/com/vuforia/app/utils" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/Texture.java"
-                     target-dir="src/com/vuforia/app/utils" />
+                     target-dir="src/com/vuforia/app/utils" />-->
 
         <!-- Include our resources -->
         <resource-file src="targets/PluginTest.dat"
