@@ -53,7 +53,7 @@
         <source-file src="src/android/VuforiaPlugin.java" target-dir="src/com/vuforia" />
 
         <!-- Assets -->
-        <resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />
+        <!--<resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />-->
         <resource-file src="src/android/res/drawable/devices.png" target="res/drawable/devices.png" />
         <resource-file src="src/android/res/drawable-hdpi/devices.png" target="res/drawable-hdpi/devices.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/devices.png" target="res/drawable-xxhdpi/devices.png" />
