@@ -82,6 +82,7 @@
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/CubeShaders.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/LineShaders.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/LoadingDialogHandler.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/MeshObject.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/SampleApplication3DModel.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/SampleApplicationGLView.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
         <source-file src="src/android/java/com/vuforia/samples/SampleApplication/utils/SampleMath.java" target-dir="src/com/vuforia/samples/SampleApplication/utils/" />
