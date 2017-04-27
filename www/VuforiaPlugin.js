@@ -153,4 +153,4 @@ var VuforiaPlugin = {
 
 module.exports = VuforiaPlugin;
 
-});
+//});
