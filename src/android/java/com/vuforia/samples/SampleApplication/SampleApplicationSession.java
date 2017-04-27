@@ -8,7 +8,7 @@ countries.
 ===============================================================================*/
 
 
-package com.vuforia.samples.SampleApplication;
+package com.mattrayner.vuforia.samples.SampleApplication;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;

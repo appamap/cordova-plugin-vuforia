@@ -16,7 +16,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 import android.Manifest;
 
-import com.vuforia.samples.VuforiaSamples.app.CloudRecognition.CloudReco;
+import com.mattrayner.vuforia.samples.VuforiaSamples.app.CloudRecognition.CloudReco;
 
 public class VuforiaPlugin extends CordovaPlugin {
     static final String LOGTAG = "CordovaVuforiaPlugin";
