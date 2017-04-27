@@ -36,7 +36,7 @@ import com.vuforia.VideoBackgroundConfig;
 import com.vuforia.VideoMode;
 import com.vuforia.Vuforia;
 import com.vuforia.Vuforia.UpdateCallbackInterface;
-import com.vuforia.VuforiaPlugin;
+import com.mattrayner.vuforia.VuforiaPlugin;
 //import com.vuforia.VuforiaPlugin;
 
 

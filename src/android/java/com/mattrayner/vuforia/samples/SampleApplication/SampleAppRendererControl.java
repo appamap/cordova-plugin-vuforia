@@ -9,7 +9,7 @@ countries.
 
 package com.mattrayner.vuforia.samples.SampleApplication;
 
-import com.mattrayner.vuforia.State;
+import com.vuforia.State;
 
 public interface SampleAppRendererControl {
 

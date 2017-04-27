@@ -35,8 +35,8 @@ import com.vuforia.Vec4I;
 import com.vuforia.VideoBackgroundConfig;
 import com.vuforia.VideoMode;
 import com.vuforia.ViewList;
-import com.vuforia.samples.SampleApplication.utils.VideoBackgroundShader;
-import com.vuforia.samples.SampleApplication.utils.SampleUtils;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.VideoBackgroundShader;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.SampleUtils;
 
 public class SampleAppRenderer {
 

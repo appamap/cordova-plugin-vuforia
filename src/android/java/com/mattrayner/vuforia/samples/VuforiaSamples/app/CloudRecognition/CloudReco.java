@@ -8,7 +8,7 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 
-package com.vuforia.samples.VuforiaSamples.app.CloudRecognition;
+package com.mattrayner.vuforia.samples.VuforiaSamples.app.CloudRecognition;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -40,15 +40,16 @@ import com.vuforia.Tracker;
 import com.vuforia.TrackerManager;
 import com.vuforia.Vuforia;
 import com.vuforia.VuforiaPlugin;
-import com.vuforia.samples.SampleApplication.SampleApplicationControl;
-import com.vuforia.samples.SampleApplication.SampleApplicationException;
-import com.vuforia.samples.SampleApplication.SampleApplicationSession;
-import com.vuforia.samples.SampleApplication.utils.LoadingDialogHandler;
-import com.vuforia.samples.SampleApplication.utils.SampleApplicationGLView;
-import com.vuforia.samples.SampleApplication.utils.Texture;
-import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenu;
-import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuGroup;
-import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuInterface;
+import com.mattrayner.vuforia.VuforiaPlugin;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationControl;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationException;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationSession;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.LoadingDialogHandler;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.SampleApplicationGLView;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.Texture;
+import com.mattrayner.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenu;
+import com.mattrayner.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuGroup;
+import com.mattrayner.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuInterface;
 
 import org.apache.cordova.PluginResult;
 import org.json.JSONObject;

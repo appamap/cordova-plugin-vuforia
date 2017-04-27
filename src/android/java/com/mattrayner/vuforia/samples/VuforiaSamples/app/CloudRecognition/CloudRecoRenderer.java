@@ -7,7 +7,7 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 
-package com.vuforia.samples.VuforiaSamples.app.CloudRecognition;
+package com.mattrayner.vuforia.samples.VuforiaSamples.app.CloudRecognition;
 
 import java.util.Vector;
 
@@ -26,13 +26,13 @@ import com.vuforia.Tool;
 import com.vuforia.TrackableResult;
 import com.vuforia.VIDEO_BACKGROUND_REFLECTION;
 import com.vuforia.Vuforia;
-import com.vuforia.samples.SampleApplication.SampleAppRenderer;
-import com.vuforia.samples.SampleApplication.SampleAppRendererControl;
-import com.vuforia.samples.SampleApplication.SampleApplicationSession;
-import com.vuforia.samples.SampleApplication.utils.CubeShaders;
-import com.vuforia.samples.SampleApplication.utils.SampleUtils;
-import com.vuforia.samples.SampleApplication.utils.Teapot;
-import com.vuforia.samples.SampleApplication.utils.Texture;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleAppRenderer;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleAppRendererControl;
+import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationSession;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.CubeShaders;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.SampleUtils;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.Teapot;
+import com.mattrayner.vuforia.samples.SampleApplication.utils.Texture;
 
 
 // The renderer class for the CloudReco sample. 
