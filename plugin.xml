@@ -50,7 +50,7 @@
         </config-file>
 
         <!-- Plugin Source -->
-        <source-file src="src/android/mattrayner/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
 
         <!-- Assets -->
         <resource-file src="src/android/res/values/arcode_strings.xml" target="res/values/arcode_strings.xml" />
