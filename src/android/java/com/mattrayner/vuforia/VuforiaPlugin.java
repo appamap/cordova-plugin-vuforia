@@ -340,14 +340,19 @@ public class VuforiaPlugin extends CordovaPlugin {
 
                         // Create the plugin result
                         PluginResult result ;
-                        if (VuforiaPlugin.url.indexOf("http")>-1)
-                            result = new PluginResult(PluginResult.Status.OK, url);
-                        else
+                        if (VuforiaPlugin.url!=null){
+                            if (VuforiaPlugin.url.indexOf("http")>-1)
+                                result = new PluginResult(PluginResult.Status.OK, url);
+                            else
+                                result = new PluginResult(PluginResult.Status.OK, jsonObj);
+                            persistantVuforiaStartCallback.sendPluginResult(result);
+                        }else{
                             result = new PluginResult(PluginResult.Status.OK, jsonObj);
+                            persistantVuforiaStartCallback.sendPluginResult(result);
+                        }
 
                         // Send a result specifically to our PERSISTANT callback i.e. the callback given to startVuforia.
                         // This allows us to receive other messages from start/stop tracker events without losing this particular callback.
-                        persistantVuforiaStartCallback.sendPluginResult(result);
                     }
                     catch(JSONException e) { // We encounter a JSONException
                         Log.d(LOGTAG, "JSON ERROR: " + e);
