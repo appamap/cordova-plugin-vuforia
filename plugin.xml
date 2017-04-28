@@ -197,7 +197,7 @@
         <header-file src="src/ios/ImageTargets/SampleApplication3DModel.h" />
         <source-file src="src/ios/ImageTargets/SampleApplication3DModel.m" />
         <header-file src="src/ios/ImageTargets/SampleApplicationSession.h" />
-        <source-file src="src/ios/ImageTargets/SampleApplicationSession.m" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationSession.mm" />
         
         <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
         <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
@@ -209,7 +209,7 @@
         <header-file src="src/ios/ImageTargets/SampleAppRenderer.h" />
         <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
         <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
-        <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.mm" />
+        <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
 
         <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
         <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
