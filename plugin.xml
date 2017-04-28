@@ -183,6 +183,7 @@
         <source-file src="src/ios/ImageTargets/CloudRecoViewController.mm" />
         <header-file src="src/ios/ImageTargets/SampleMath.h" />
         <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
+        <header-file src="src/ios/ImageTargets/Texture.h" />
 
 
         <source-file src="src/ios/Utils/ApplicationSession.h" />
