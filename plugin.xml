@@ -211,6 +211,7 @@
         <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
         <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
         <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
+        <header-file src="src/ios/ImageTargets/SampleGLResourceHandler.h" />
 
         <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
         <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
@@ -222,7 +223,6 @@
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
         <source-file src="src/ios/Utils/GLResourceHandler.h" />
-        <header-file src="src/ios/Utils/SampleGLResourceHandler.h" />
 
         <resource-file src="src/ios/VuforiaPlugin.bundle" />
         <resource-file src="src/ios/Utils/shaders/Line.fragsh" target-dir="com.mattrayner.vuforia/shader" />
