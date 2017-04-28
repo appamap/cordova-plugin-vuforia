@@ -188,6 +188,7 @@
         <header-file src="src/ios/ImageTargets/SampleMath.h" />
         <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
         <header-file src="src/ios/ImageTargets/Texture.h" />
+        <header-file src="src/ios/ImageTargets/Teapot.h" />
         <source-file src="src/ios/ImageTargets/Texture.mm" />
         <header-file src="src/ios/ImageTargets/Quad.h" />
 
