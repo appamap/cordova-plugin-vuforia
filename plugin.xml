@@ -214,8 +214,6 @@
         <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
         <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
 
-        <header-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.h" />
-        <source-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.m" />
         
         <header-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.h" />
         <source-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.m" />
