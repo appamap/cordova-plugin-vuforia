@@ -177,153 +177,67 @@
         <source-file src="src/ios/ImageTargets/VideoPlaybackViewController.mm" />
 		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
         <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" />
+
+		<header-file src="src/ios/ImageTargets/PresentMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/PresentMenuSegue.m" />
+
         <header-file src="src/ios/ImageTargets/CloudRecoEAGLView.h" />
         <source-file src="src/ios/ImageTargets/CloudRecoEAGLView.mm" />
         <header-file src="src/ios/ImageTargets/CloudRecoViewController.h" />
         <source-file src="src/ios/ImageTargets/CloudRecoViewController.mm" />
         <header-file src="src/ios/ImageTargets/SampleMath.h" />
         <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
+        <header-file src="src/ios/ImageTargets/Texture.h" />
+        <header-file src="src/ios/ImageTargets/Teapot.h" />
+        <source-file src="src/ios/ImageTargets/Texture.mm" />
+        <header-file src="src/ios/ImageTargets/Quad.h" />
 
+
+        <header-file src="src/ios/ImageTargets/SampleAppAboutViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppAboutViewController.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplication3DModel.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplication3DModel.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationSession.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationSession.mm" />
+        
+        <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
+        
+        <header-file src="src/ios/ImageTargets/SampleAppMenuViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppMenuViewController.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppRenderer.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
+
+        <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
+
+        
+        <header-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.h" />
+        <source-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.m" />
 
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
         <source-file src="src/ios/Utils/GLResourceHandler.h" />
-
-
-            <header-file src="src/ios/ImageTargets/PresentMenuSegue.h" />
-            <header-file src="src/ios/ImageTargets/Quad.h" />
-            <header-file src="src/ios/ImageTargets/SampleAppAboutViewController.h" />
-            <header-file src="src/ios/ImageTargets/SampleAppMenuViewController.h" />
-            <header-file src="src/ios/ImageTargets/SampleAppRenderer.h" />
-            <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
-            <header-file src="src/ios/ImageTargets/SampleApplication3DModel.h" />
-            <header-file src="src/ios/ImageTargets/SampleApplicationSession.h" />
-            <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
-            <header-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
-            <header-file src="src/ios/ImageTargets/SampleApplicationUtils.h" />
-            <header-file src="src/ios/ImageTargets/SampleGLResourceHandler.h" />
-            <header-file src="src/ios/ImageTargets/Teapot.h" />
-            <header-file src="src/ios/ImageTargets/Texture.h" />
-            <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Area.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Box3D.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CameraCalibration.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CameraDevice.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CameraField.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CustomViewerParameters.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CylinderTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/CylinderTargetResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/DataSet.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Device.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/DeviceTrackable.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/DeviceTrackableResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/DeviceTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/EyeID.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/EyewearCalibrationProfileManager.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/EyewearCalibrationReading.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/EyewearDevice.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/EyewearUserCalibrator.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Frame.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/GLRenderer.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/HandheldTransformModel.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/HeadTransformModel.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Image.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ImageTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ImageTargetBuilder.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ImageTargetResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/InstanceId.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Marker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/MarkerResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/MarkerTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Matrices.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Mesh.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/MetalRenderer.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/MultiTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/MultiTargetResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/NonCopyable.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Obb2D.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Obb3D.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ObjectTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ObjectTargetResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ObjectTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Prop.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/PropResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Reconstruction.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ReconstructionFromTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Rectangle.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Renderer.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/RenderingPrimitives.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/RotationalDeviceTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/SmartTerrainBuilder.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/SmartTerrainTrackable.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/SmartTerrainTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/State.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/StateUpdater.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Surface.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/SurfaceResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/System.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TargetFinder.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TargetSearchResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TextTracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Tool.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Trackable.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TrackableResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TrackableSource.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Tracker.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TrackerManager.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/TransformModel.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Type.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/UIGLViewProtocol.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/UpdateCallback.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Vectors.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VideoBackgroundConfig.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VideoBackgroundTextureInfo.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VideoMode.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/View.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ViewList.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ViewerParameters.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/ViewerParametersList.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VirtualButton.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VirtualButtonResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VuMarkTarget.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VuMarkTargetResult.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/VuMarkTemplate.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Vuforia.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Vuforia_iOS.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/Word.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/WordList.h" />
-            <header-file src="src/ios/ImageTargets/Vuforia/WordResult.h" />
-            <header-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.h" />
-            <header-file src="src/ios/Utils/shaders/Background.fragsh" />
-            <header-file src="src/ios/Utils/shaders/Background.vertsh" />
-            <header-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" />
-
- <source-file src="src/ios/ImageTargets/PresentMenuSegue.m" />
- <source-file src="src/ios/ImageTargets/SampleAppAboutViewController.m" />
- <source-file src="src/ios/ImageTargets/SampleAppMenuViewController.mm" />
- <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
- <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
- <source-file src="src/ios/ImageTargets/SampleApplication3DModel.m" />
- <source-file src="src/ios/ImageTargets/SampleApplicationSession.mm" />
- <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
- <source-file src="src/ios/ImageTargets/Texture.mm" />
- <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
- <source-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.m" />
-            
-        
+        <header-file src="src/ios/Utils/SampleGLResourceHandler.h" />
 
         <resource-file src="src/ios/VuforiaPlugin.bundle" />
         <resource-file src="src/ios/Utils/shaders/Line.fragsh" target-dir="com.mattrayner.vuforia/shader" />
         <resource-file src="src/ios/Utils/shaders/Line.vertsh" target-dir="com.mattrayner.vuforia/shader" />
         <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="com.mattrayner.vuforia" />
         <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="com.mattrayner.vuforia" />
+        <resource-file src="src/ios/Utils/shaders/Background.fragsh" target-dir="com.mattrayner.vuforia/shader" />
+        <resource-file src="src/ios/Utils/shaders/Background.vertsh" target-dir="com.mattrayner.vuforia/shader" />
+        <resource-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" target-dir="com.mattrayner.vuforia" />
 
         <resource-file src="targets/PluginTest.dat" target-dir="com.mattrayner.vuforia" />
         <resource-file src="targets/PluginTest.xml" target-dir="com.mattrayner.vuforia" />
 
         <resource-file src="src/ios/Assets/ImageTargets/close-button.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/iOSDevices.png" target-dir="Resources" />
-        
         <resource-file src="src/ios/Assets/ImageTargets/scanline.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/scanline@2x.png" target-dir="Resources" />
         
