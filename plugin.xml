@@ -177,6 +177,10 @@
         <source-file src="src/ios/ImageTargets/VideoPlaybackViewController.mm" />
 		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
         <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" />
+
+		<header-file src="src/ios/ImageTargets/PresentMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/PresentMenuSegue.m" />
+
         <header-file src="src/ios/ImageTargets/CloudRecoEAGLView.h" />
         <source-file src="src/ios/ImageTargets/CloudRecoEAGLView.mm" />
         <header-file src="src/ios/ImageTargets/CloudRecoViewController.h" />
@@ -184,7 +188,37 @@
         <header-file src="src/ios/ImageTargets/SampleMath.h" />
         <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
         <header-file src="src/ios/ImageTargets/Texture.h" />
+        <source-file src="src/ios/ImageTargets/Texture.mm" />
+        <header-file src="src/ios/ImageTargets/Quad.h" />
 
+
+        <header-file src="src/ios/ImageTargets/SampleAppAboutViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppAboutViewController.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplication3DModel.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplication3DModel.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationSession.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationSession.m" />
+        
+        <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
+        
+        <header-file src="src/ios/ImageTargets/SampleAppMenuViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppMenuViewController.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppRenderer.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.mm" />
+
+        <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
+
+        <header-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.h" />
+        <source-file src="src/ios/ImageTargets/VideoPlaybackAppDelegate.m" />
+        
+        <header-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.h" />
+        <source-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.m" />
 
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
@@ -207,5 +241,5 @@
         
     </platform>
 
-    <dependency id="cordova-plugin-vuforia-sdk" version="6.x.x" />
+    <dependency id="cordova-plugin-vuforia-sdk" version="6.2.9" />
 </plugin>
