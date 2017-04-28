@@ -50,7 +50,7 @@ CDVPluginResult *presult;
     if (self.launchedCamera == false) {
         
         
-        self.imageTargetsViewController = [[CloudRecoViewController alloc] initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:@"dd"];
+        self.imageTargetsViewController = [[CloudRecoViewController alloc] initWithOverlayOptions:self.overlayOptions vuforiaLicenseKey:vuforia_key];
         self.launchedCamera = true;
 
        // self.VideoPlaybackViewController.imageTargetFile = [self.imageTargets objectForKey:@"imageTargetFile"];

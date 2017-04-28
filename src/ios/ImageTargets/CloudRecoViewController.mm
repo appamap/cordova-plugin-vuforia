@@ -1,11 +1,11 @@
 /*===============================================================================
-Copyright (c) 2016 PTC Inc. All Rights Reserved.
-
-Copyright (c) 2012-2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
-
-Vuforia is a trademark of PTC Inc., registered in the United States and other 
-countries.
-===============================================================================*/
+ Copyright (c) 2016 PTC Inc. All Rights Reserved.
+ 
+ Copyright (c) 2012-2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
+ 
+ Vuforia is a trademark of PTC Inc., registered in the United States and other
+ countries.
+ ===============================================================================*/
 
 #import "CloudRecoViewController.h"
 #import "VuforiaSamplesAppDelegate.h"
@@ -16,10 +16,12 @@ countries.
 #import <Vuforia/ImageTarget.h>
 #import <Vuforia/TargetFinder.h>
 #import <Vuforia/CameraDevice.h>
-
+#import "VuforiaPlugin.h"
 #import "UnwindMenuSegue.h"
 #import "PresentMenuSegue.h"
 #import "SampleAppMenuViewController.h"
+#import "ViewController.h"
+
 
 static const char* const kAccessKey = "efce628c764f89aef73c7b5c0de7925cced8e11f";
 static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182";
@@ -47,13 +49,13 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     self.vuforiaLicenseKey = vuforiaLicenseKey;
     //self = [self initWithNibName:nil bundle:nil];
     
-     [self loadOverlay];
-     [self scanlineStart];
+    [self loadOverlay];
+    [self scanlineStart];
     
     
     return self;
     
-      
+    
 }
 
 
@@ -257,7 +259,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     
     // initialize AR
     [vapp initAR:Vuforia::GL_20 orientation:self.interfaceOrientation];
-
+    
     // show loading animation while AR is being initialized
     [self showLoadingAnimation];
 }
@@ -431,7 +433,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     }
     
     UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc]
-                                                  initWithFrame:indicatorBounds];
+                                                 initWithFrame:indicatorBounds];
     
     loadingIndicator.tag  = 1;
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
@@ -481,9 +483,10 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     }
     
     NSDate *start = [NSDate date];
-    
+    const char *c_access=[vuforia_access_key UTF8String];
+    const char *c_secret=[vuforia_secret_key UTF8String];
     // Start initialization:
-    if (targetFinder->startInit(kAccessKey, kSecretKey))
+    if (targetFinder->startInit(c_access, c_secret))
     {
         targetFinder->waitUntilInitFinished();
         
@@ -527,7 +530,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
     
     Vuforia::ObjectTracker* objectTracker = static_cast<Vuforia::ObjectTracker*>(
-                                                                           trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
+                                                                                 trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
     if (objectTracker == 0) {
         NSLog(@"Failed to start Object Tracker, as it is null.");
         return NO;
@@ -566,13 +569,15 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
         NSLog(@"Error initializing AR:%@", [initError description]);
         
         dispatch_async( dispatch_get_main_queue(), ^{
+            [self killAll];
+            [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:[initError localizedDescription]
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
+            //            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+            //                                                            message:[initError localizedDescription]
+            //                                                           delegate:self
+            //                                                  cancelButtonTitle:@"OK"
+            //                                                  otherButtonTitles:nil];
+            //            [alert show];
         });
     }
 }
@@ -582,7 +587,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
     // Stop the tracker:
     Vuforia::TrackerManager& trackerManager = Vuforia::TrackerManager::getInstance();
     Vuforia::ObjectTracker* objectTracker = static_cast<Vuforia::ObjectTracker*>(
-                                                                           trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
+                                                                                 trackerManager.getTracker(Vuforia::ObjectTracker::getClassType()));
     if(objectTracker != 0) {
         objectTracker->stop();
         
@@ -681,7 +686,7 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
              "null": null,
              "number": 123,
              "object": {
-             “url”: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+             Ă˘ÂÂurlĂ˘ÂÂ: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
              "c": "d",
              "e": "f"
              },
@@ -693,29 +698,49 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
             
             
             
-             NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
+            NSString *meta = [NSString stringWithUTF8String:result->getMetaData()];
+            NSData *data = [meta dataUsingEncoding:NSUTF8StringEncoding];
+            id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            id jso=[json objectForKey:@"object"];
+            NSString *url=[NSString stringWithFormat:@"%@",[jso objectForKey:@"url"]];
+            //            NSString *url=@"https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr";
+            //            vuforia_cs_key=@"a";
+            
+            //            CDVPluginResult* pluginResult = nil;
+            if ([url isEqual:[NSNull null]]){
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CDVPluginResult *pluginResult = [ CDVPluginResult
+                                                     resultWithStatus    : CDVCommandStatus_OK
+                                                     messageAsString: url
+                                                     ];
+                    [vplug.commandDelegate sendPluginResult:pluginResult callbackId:vuforia_command_id];
+                });
+            }
             
             // Check if this target is suitable for tracking:
-            if (result->getTrackingRating() > 0)
-            {
-                // Create a new Trackable from the result:
-                Vuforia::Trackable* newTrackable = finder->enableTracking(*result);
-                if (newTrackable != 0)
-                {
-                    //  Avoid entering on ContentMode when a bad target is found
-                    //  (Bad Targets are targets that are exists on the CloudReco database but not on our
-                    //  own book database)
-                    NSLog(@"Successfully created new trackable '%s' with rating '%d'.",
-                          newTrackable->getName(), result->getTrackingRating());
-                    if (extendedTrackingEnabled) {
-                        newTrackable->startExtendedTracking();
-                    }
-                }
-                else
-                {
-                    NSLog(@"Failed to create new trackable.");
-                }
-            }
+            // if (result->getTrackingRating() > 0)
+            // {
+            //     // Create a new Trackable from the result:
+            //     Vuforia::Trackable* newTrackable = finder->enableTracking(*result);
+            //     if (newTrackable != 0)
+            //     {
+            //         //  Avoid entering on ContentMode when a bad target is found
+            //         //  (Bad Targets are targets that are exists on the CloudReco database but not on our
+            //         //  own book database)
+            //         NSLog(@"Successfully created new trackable '%s' with rating '%d'.",
+            //               newTrackable->getName(), result->getTrackingRating());
+            //         if (extendedTrackingEnabled) {
+            //             newTrackable->startExtendedTracking();
+            //         }
+            //     }
+            //     else
+            //     {
+            //         NSLog(@"Failed to create new trackable.");
+            //     }
+            // }
+            
+            
         }
     }
     
@@ -868,7 +893,7 @@ const int VIEW_SCAN_LINE_TAG = 1111;
 
 - (void) scanlineCreate {
     CGRect frame = [[UIScreen mainScreen] bounds];
-
+    
     UIImageView *scanLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 50)];
     scanLineView.tag = VIEW_SCAN_LINE_TAG;
     scanLineView.contentMode = UIViewContentModeScaleToFill;

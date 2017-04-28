@@ -8,10 +8,12 @@ countries.
 ===============================================================================*/
 
 #import <UIKit/UIKit.h>
+#import "VuforiaPlugin.h"
 #import "CloudRecoEAGLView.h"
 #import "SampleApplicationSession.h"
 #import "SampleAppMenuViewController.h"
 #import <Vuforia/DataSet.h>
+#import <Cordova/CDV.h>
 
 @interface CloudRecoViewController : UIViewController <SampleApplicationControl, SampleAppMenuDelegate, UIAlertViewDelegate> {
     
