@@ -39,7 +39,6 @@ import com.vuforia.Trackable;
 import com.vuforia.Tracker;
 import com.vuforia.TrackerManager;
 import com.vuforia.Vuforia;
-import com.vuforia.VuforiaPlugin;
 import com.mattrayner.vuforia.VuforiaPlugin;
 import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationControl;
 import com.mattrayner.vuforia.samples.SampleApplication.SampleApplicationException;
