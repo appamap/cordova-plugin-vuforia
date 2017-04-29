@@ -1,4 +1,4 @@
-
+//cordova.define("cordova-plugin-vuforia.VuforiaPlugin", function(require, exports, module) {
 /**
  * VuforiaPlugin module, used within our Cordova front-end to both start and stop a Vuforia image recognition session.
  *
@@ -151,4 +151,4 @@ var VuforiaPlugin = {
   }
 };
 
-
+module.exports = VuforiaPlugin;
