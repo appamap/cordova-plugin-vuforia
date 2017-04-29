@@ -10,15 +10,13 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import android.Manifest;
-import android.Manifest.permission;
 
-import com.mattrayner.vuforia.app.ImageTargets;
+import com.mattrayner.vuforia.samples.VuforiaSamples.app.CloudRecognition.CloudReco;
 
 public class VuforiaPlugin extends CordovaPlugin {
     static final String LOGTAG = "CordovaVuforiaPlugin";
@@ -37,11 +35,19 @@ public class VuforiaPlugin extends CordovaPlugin {
     public static final int ERROR_RESULT = 2;
     public static final int NO_RESULT = 3;
 
+    public static String vuforia_key;
+    public static String vuforia_access_key;
+    public static String vuforia_secret_key;
+    public static String command_id;
+
+    public static String url;
+
     // What access to the camera do we require?
     private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
 
     // Save a copy of our starting vuforia context so that we can start reference it later is needs be
     private static CallbackContext persistantVuforiaStartCallback;
+    public static CallbackContext initVuforiaCallback;
 
     // Some internal variables for storing state across methods
     private static String ACTION;
@@ -53,6 +59,7 @@ public class VuforiaPlugin extends CordovaPlugin {
     private boolean vuforiaStarted = false;
     private boolean autostopOnImageFound = true;
     CallbackContext callback;
+
 
     public VuforiaPlugin() {
     }
@@ -68,7 +75,13 @@ public class VuforiaPlugin extends CordovaPlugin {
         callback = callbackContext;
 
         // Handle all expected actions
-        if(action.equals("cordovaStartVuforia")) {
+        if(action.equals("cordovaRequestClose")) {
+            requestClose(action, args, callbackContext);
+        }
+        else if(action.equals("cordovaInitVuforia")) {
+            initVuforia(action, args, callbackContext);
+        }
+        else if(action.equals("cordovaStartVuforia")) {
             startVuforia(action, args, callbackContext);
         }
         else if(action.equals("cordovaStopVuforia")) {
@@ -90,6 +103,76 @@ public class VuforiaPlugin extends CordovaPlugin {
         return true;
     }
 
+    public void initVuforia(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        // If we are starting Vuforia, set the public variable referencing our start callback for later use
+//        VuforiaPlugin.persistantVuforiaStartCallback = callbackContext;
+        initVuforiaCallback=callbackContext;
+
+        ACTION = action;
+        ARGS = args;
+
+        // Get all of our ARGS out and into local variables
+//        String targetFile = args.getString(0);
+//        String targets = args.getJSONArray(1).toString();
+//        String overlayText = (args.isNull(2)) ? null : args.getString(2);
+//        String vuforiaLicense = args.getString(3);
+//        Boolean closeButton = args.getBoolean(4);
+//        Boolean showDevicesIcon = args.getBoolean(5);
+//        autostopOnImageFound = args.getBoolean(6);
+        vuforia_key=args.get(0).toString();
+        vuforia_access_key=args.get(1).toString();
+        vuforia_secret_key=args.get(2).toString();
+
+        command_id=callbackContext.getCallbackId();
+
+        Boolean closeButton = true;
+        Boolean showDevicesIcon = false;
+        autostopOnImageFound = true;
+        String overlayText = "Scan the pattern image";
+
+        Context context =  cordova.getActivity().getApplicationContext();
+
+        // Create a new intent to pass data to Vuforia
+//        Intent intent = new Intent(context, CloudReco.class);
+//
+//
+//        if(overlayText != null)
+//            intent.putExtra("OVERLAY_TEXT", overlayText);
+//
+//        intent.putExtra("LICENSE_KEY", vuforia_key);
+//        intent.putExtra("DISPLAY_CLOSE_BUTTON", closeButton);
+//        intent.putExtra("DISPLAY_DEVICES_ICON", showDevicesIcon);
+//        intent.putExtra("STOP_AFTER_IMAGE_FOUND", autostopOnImageFound);
+
+        JSONObject json = new JSONObject();
+        if(vuforiaStarted) {
+            sendAction(DISMISS_ACTION);
+            json.put("success", "true");
+            json.put("message", "success");
+        }
+        else {
+            json.put("success", "false");
+            json.put("message", "No Vuforia session running");
+        }
+
+        PluginResult result = new PluginResult(PluginResult.Status.OK, " ");
+        result.setKeepCallback(true);
+        callback.sendPluginResult(result);
+
+        // Check to see if we have permission to access the camera
+//        if(cordova.hasPermission(CAMERA)) {
+//            // Launch a new activity with Vuforia in it. Expect it to return a result.
+//            cordova.startActivityForResult(this, intent, IMAGE_REC_REQUEST);
+//            vuforiaStarted = true;
+//        }
+//        else {
+//            // Request the camera permission and handle the outcome.
+//            cordova.requestPermission(this, CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE, CAMERA);
+//        }
+
+    }
+
+
     // Start our Vuforia activities
     public void startVuforia(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         // If we are starting Vuforia, set the public variable referencing our start callback for later use
@@ -99,30 +182,40 @@ public class VuforiaPlugin extends CordovaPlugin {
         ARGS = args;
 
         // Get all of our ARGS out and into local variables
-        String targetFile = args.getString(0);
-        String targets = args.getJSONArray(1).toString();
-        String overlayText = (args.isNull(2)) ? null : args.getString(2);
-        String vuforiaLicense = args.getString(3);
-        Boolean closeButton = args.getBoolean(4);
-        Boolean showDevicesIcon = args.getBoolean(5);
-        autostopOnImageFound = args.getBoolean(6);
+//        String targetFile = args.getString(0);
+//        String targets = args.getJSONArray(1).toString();
+//        String overlayText = (args.isNull(2)) ? null : args.getString(2);
+//        String vuforiaLicense = args.getString(3);
+//        Boolean closeButton = args.getBoolean(4);
+//        Boolean showDevicesIcon = args.getBoolean(5);
+//        autostopOnImageFound = args.getBoolean(6);
+
+
+
+        Boolean closeButton = true;
+        Boolean showDevicesIcon = false;
+        autostopOnImageFound = true;
+        String overlayText = "Scan the pattern image";
 
         Context context =  cordova.getActivity().getApplicationContext();
 
         // Create a new intent to pass data to Vuforia
-        Intent intent = new Intent(context, ImageTargets.class);
+        Intent intent = new Intent(context, CloudReco.class);
 
-        intent.putExtra("IMAGE_TARGET_FILE", targetFile);
-        intent.putExtra("IMAGE_TARGETS", targets);
+//        intent.putExtra("IMAGE_TARGET_FILE", targetFile);
+//        intent.putExtra("IMAGE_TARGETS", targets);
 
-        if(overlayText != null)
-            intent.putExtra("OVERLAY_TEXT", overlayText);
+//        if(overlayText != null)
+//            intent.putExtra("OVERLAY_TEXT", overlayText);
 
-        intent.putExtra("LICENSE_KEY", vuforiaLicense);
-        intent.putExtra("DISPLAY_CLOSE_BUTTON", closeButton);
-        intent.putExtra("DISPLAY_DEVICES_ICON", showDevicesIcon);
-        intent.putExtra("STOP_AFTER_IMAGE_FOUND", autostopOnImageFound);
 
+//        intent.putExtra("LICENSE_KEY", vuforiaLicense);
+//        intent.putExtra("LICENSE_KEY", vuforiaLicense);
+//        intent.putExtra("LICENSE_KEY", "Af2i8BT/////AAAAASoF8i4BBklQv2w2gSsqd992i56nqMMRJ9UaE3ipEQdb0JzladxOfT3gTqNDeBltx8eejdV0DvA0CylpMc/Hpz6MI6skxC4yXpqbBQ24IT8nx7GZvIAAFs0KFbKijh2Qndw/nHAsHjrzfuQw35ug8SifdIQE3Q7HaqDFI8hCskDRgO9WSIfeuFiIxCX33wwEMYUU6AOkavoImXL6z+oD19/KwHfvInFqKb60uIN34h+h04WmjaW3L734GDN+Bi4u/FxlFsIFNLzWOHgDBtf6WHLnzoYl6JvJOZP2hVQJ1GCDqGoCMZKorYG+E0qlkeQt7lBIz9T7IzXJX5XvRJUb6aKByfCgn4Z5iDXgBYNyHolV");
+//        intent.putExtra("DISPLAY_CLOSE_BUTTON", closeButton);
+//        intent.putExtra("DISPLAY_DEVICES_ICON", showDevicesIcon);
+//        intent.putExtra("STOP_AFTER_IMAGE_FOUND", autostopOnImageFound);
+//
         // Check to see if we have permission to access the camera
         if(cordova.hasPermission(CAMERA)) {
             // Launch a new activity with Vuforia in it. Expect it to return a result.
@@ -246,7 +339,11 @@ public class VuforiaPlugin extends CordovaPlugin {
                         jsonObj.put("result", jsonResult);
 
                         // Create the plugin result
-                        PluginResult result = new PluginResult(PluginResult.Status.OK, jsonObj);
+                        PluginResult result ;
+                        if (VuforiaPlugin.url.indexOf("http")>-1)
+                            result = new PluginResult(PluginResult.Status.OK, url);
+                        else
+                            result = new PluginResult(PluginResult.Status.OK, jsonObj);
 
                         // Send a result specifically to our PERSISTANT callback i.e. the callback given to startVuforia.
                         // This allows us to receive other messages from start/stop tracker events without losing this particular callback.
@@ -340,5 +437,21 @@ public class VuforiaPlugin extends CordovaPlugin {
 
         // Send the result to our PERSISTANT callback
         persistantVuforiaStartCallback.sendPluginResult(result);
+    }
+
+
+    public void requestClose(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+
+        if(vuforiaStarted) {
+            Log.d(LOGTAG, "Stopping plugin");
+
+            // Stop Vuforia
+            sendAction(DISMISS_ACTION);
+            vuforiaStarted = false;
+
+        }
+        else {
+        }
+
     }
 }

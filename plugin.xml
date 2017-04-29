@@ -50,9 +50,27 @@
         </config-file>
 
         <!-- Plugin Source -->
-        <source-file src="src/android/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
 
         <!-- Assets -->
+        <resource-file src="src/android/res/values/arcode_strings.xml" target="res/values/arcode_strings.xml" />
+        <resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/res/values/facebookconnect.xml" target="res/values/facebookconnect.xml" />
+        <resource-file src="src/android/res/values/parseplugin.xml" target="res/values/parseplugin.xml" />
+        <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
+
+
+        <resource-file src="src/android/res/layout/sample_app_menu_layer.xml" target="res/layout/sample_app_menu_layer.xml" />
+        <resource-file src="src/android/res/layout/camera_overlay_with_scanline.xml" target="res/layout/camera_overlay_with_scanline.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group.xml" target="res/layout/sample_app_menu_group.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group_divider.xml" target="res/layout/sample_app_menu_group_divider.xml" />
+        <resource-file src="src/android/res/layout/sample_app_menu_group_radio_button.xml" target="res/layout/sample_app_menu_group_radio_button.xml" />
+
+        <resource-file src="src/android/res/drawable/scanline.png" target="res/drawable/scanline.png" />
+
+
         <resource-file src="src/android/res/drawable/devices.png" target="res/drawable/devices.png" />
         <resource-file src="src/android/res/drawable-hdpi/devices.png" target="res/drawable-hdpi/devices.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/devices.png" target="res/drawable-xxhdpi/devices.png" />
@@ -71,30 +89,65 @@
 
         <resource-file src="src/android/res/layout/camera_overlay.xml" target="res/layout/camera_overlay.xml" />
 
-        <source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargets.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app" />
-        <source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRenderer.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRendererControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
+
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeObject.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeShaders.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/LineShaders.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/LoadingDialogHandler.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/MeshObject.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplication3DModel.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplicationGLView.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleMath.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleUtils.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/Teapot.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/Texture.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/utils/VideoBackgroundShader.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils/" />
+
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/" />
+
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/" />
+        
+        
+        <!--<source-file src="src/android/java/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
+                     target-dir="src/com/vuforia/app" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/ApplicationControl.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app" />
+                     target-dir="src/com/vuforia/app" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/ApplicationException.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app" />
+                     target-dir="src/com/vuforia/app" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/ApplicationSession.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app" />
+                     target-dir="src/com/vuforia/app" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/LoadingDialogHandler.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app/utils" />
+                     target-dir="src/com/vuforia/app/utils" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/MeshObject.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app/utils" />
+                     target-dir="src/com/vuforia/app/utils" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/ApplicationGLView.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app/utils" />
+                     target-dir="src/com/vuforia/app/utils" />
         <source-file src="src/android/java/com/mattrayner/vuforia/app/utils/Texture.java"
-                     target-dir="src/java/com/mattrayner/vuforia/app/utils" />
+                     target-dir="src/com/vuforia/app/utils" />-->
 
         <!-- Include our resources -->
         <!--<resource-file src="targets/PluginTest.dat"
                        target="assets/PluginTest.dat" />
         <resource-file src="targets/PluginTest.xml"
+<<<<<<< HEAD
                        target="assets/PluginTest.xml" />-->
+=======
+                       target="assets/PluginTest.xml" />
+
+        <resource-file src="targets/PluginTest.xml"
+                       target="assets/PluginTest.xml" />
+                       
+>>>>>>> cloud_voforia
     </platform>
 
     <!-- ios -->
@@ -128,13 +181,48 @@
         <source-file src="src/ios/ImageTargets/VideoPlaybackViewController.mm" />
 		<header-file src="src/ios/ImageTargets/VideoPlayerHelper.h" />
         <source-file src="src/ios/ImageTargets/VideoPlayerHelper.mm" />
+
+		<header-file src="src/ios/ImageTargets/PresentMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/PresentMenuSegue.m" />
+
         <header-file src="src/ios/ImageTargets/CloudRecoEAGLView.h" />
         <source-file src="src/ios/ImageTargets/CloudRecoEAGLView.mm" />
         <header-file src="src/ios/ImageTargets/CloudRecoViewController.h" />
         <source-file src="src/ios/ImageTargets/CloudRecoViewController.mm" />
         <header-file src="src/ios/ImageTargets/SampleMath.h" />
         <source-file src="src/ios/ImageTargets/SampleMath.cpp" />
+        <header-file src="src/ios/ImageTargets/Texture.h" />
+        <header-file src="src/ios/ImageTargets/Teapot.h" />
+        <source-file src="src/ios/ImageTargets/Texture.mm" />
+        <header-file src="src/ios/ImageTargets/Quad.h" />
 
+
+        <header-file src="src/ios/ImageTargets/SampleAppAboutViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppAboutViewController.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplication3DModel.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplication3DModel.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationSession.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationSession.mm" />
+        
+        <header-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationShaderUtils.m" />
+        <header-file src="src/ios/ImageTargets/SampleApplicationUtils.h" />
+        <source-file src="src/ios/ImageTargets/SampleApplicationUtils.cpp" />
+        
+        <header-file src="src/ios/ImageTargets/SampleAppMenuViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppMenuViewController.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppRenderer.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppRenderer.mm" />
+        <header-file src="src/ios/ImageTargets/SampleAppSelectorViewController.h" />
+        <source-file src="src/ios/ImageTargets/SampleAppSelectorViewController.m" />
+        <header-file src="src/ios/ImageTargets/SampleGLResourceHandler.h" />
+
+        <header-file src="src/ios/ImageTargets/UnwindMenuSegue.h" />
+        <source-file src="src/ios/ImageTargets/UnwindMenuSegue.m" />
+
+        
+        <header-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.h" />
+        <source-file src="src/ios/ImageTargets/VuforiaSamplesAppDelegate.m" />
 
         <source-file src="src/ios/Utils/ApplicationSession.h" />
         <source-file src="src/ios/Utils/ApplicationSession.mm" compiler-flags="-fno-objc-arc"/>
@@ -282,6 +370,14 @@
         <resource-file src="src/ios/VuforiaPlugin.bundle" />
         <resource-file src="src/ios/Utils/shaders/Line.fragsh" target-dir="com.mattrayner.vuforia/shader" />
         <resource-file src="src/ios/Utils/shaders/Line.vertsh" target-dir="com.mattrayner.vuforia/shader" />
+<<<<<<< HEAD
+=======
+        <resource-file src="src/ios/Utils/shaders/Simple.fragsh" target-dir="com.mattrayner.vuforia" />
+        <resource-file src="src/ios/Utils/shaders/Simple.vertsh" target-dir="com.mattrayner.vuforia" />
+        <resource-file src="src/ios/Utils/shaders/Background.fragsh" target-dir="com.mattrayner.vuforia/shader" />
+        <resource-file src="src/ios/Utils/shaders/Background.vertsh" target-dir="com.mattrayner.vuforia/shader" />
+        <resource-file src="src/ios/Utils/shaders/SimpleWithColor.fragsh" target-dir="com.mattrayner.vuforia" />
+>>>>>>> cloud_voforia
 
         <!--<resource-file src="targets/PluginTest.dat" target-dir="com.mattrayner.vuforia" />
         <resource-file src="targets/PluginTest.xml" target-dir="com.mattrayner.vuforia" />-->
@@ -290,7 +386,10 @@
         <resource-file src="src/ios/Assets/ImageTargets/scanline@2x.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/scanline.png" target-dir="Resources" />
         <resource-file src="src/ios/Assets/ImageTargets/iOSDevices.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/ImageTargets/scanline.png" target-dir="Resources" />
+        <resource-file src="src/ios/Assets/ImageTargets/scanline@2x.png" target-dir="Resources" />
+        
     </platform>
 
-    <dependency id="cordova-plugin-vuforia-sdk" version="6.x.x" />
+    <dependency id="cordova-plugin-vuforia-sdk" version="6.2.9" />
 </plugin>

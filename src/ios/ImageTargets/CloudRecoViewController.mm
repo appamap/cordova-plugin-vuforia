@@ -22,9 +22,12 @@
 #import "SampleAppMenuViewController.h"
 #import "ViewController.h"
 
+<<<<<<< HEAD
 
 //liam fix file, UTF ERROR, celened using https://r12a.github.io/apps/conversion/
 
+=======
+>>>>>>> cloud_voforia
 
 static const char* const kAccessKey = "efce628c764f89aef73c7b5c0de7925cced8e11f";
 static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182";
@@ -691,7 +694,11 @@ static const char* const kSecretKey = "b6bb8b98dff5e78ae88236b6dd6af2d1187a0182"
              "null": null,
              "number": 123,
              "object": {
+<<<<<<< HEAD
              \u0102\u0084\u00C2\u0082\u0102\u008B\u00C2\u0098\u00C4\u0082\u00C2\u0082\u0102\u0082\u00C2\u0080\u00C4\u0082\u00C2\u0082\u0102\u0082\u00C2\u009Curl\u0102\u0084\u00C2\u0082\u0102\u008B\u00C2\u0098\u00C4\u0082\u00C2\u0082\u0102\u0082\u00C2\u0080\u00C4\u0082\u00C2\u0082\u0102\u0082\u00C2\u009D: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+=======
+             Ă˘ÂÂurlĂ˘ÂÂ: "https://s3-eu-west-1.amazonaws.com/eventrotrails/-KXj_7o6Ds-VCKx0C1CC-locationvr",
+>>>>>>> cloud_voforia
              "c": "d",
              "e": "f"
              },
