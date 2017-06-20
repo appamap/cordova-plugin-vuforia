@@ -88,7 +88,7 @@
         <resource-file src="src/android/res/layout/camera_overlay.xml" target="res/layout/camera_overlay.xml" />
         
         <!-- Plugin Source -->
-        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target="src/com/mattrayner/vuforia/" />
+        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia/" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
