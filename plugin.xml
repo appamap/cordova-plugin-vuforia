@@ -49,9 +49,7 @@
 <!--            <string name="button_OK">OK</string>-->
 <!--        </config-file>-->
 
-        <!-- Plugin Source -->
-        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/java/com/mattrayner/vuforia" />
-        
+
         <!-- Assets -->
         <resource-file src="src/android/res/values/arcode_strings.xml" target="res/values/arcode_strings.xml" />
         <resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml" />
@@ -89,6 +87,8 @@
         
         <resource-file src="src/android/res/layout/camera_overlay.xml" target="res/layout/camera_overlay.xml" />
         
+        <!-- Plugin Source -->
+        <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/java/com/mattrayner/vuforia" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
         <source-file src="src/android/java/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/" />
