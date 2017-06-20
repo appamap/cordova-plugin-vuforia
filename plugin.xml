@@ -37,7 +37,7 @@
         <!-- Add our activities to the Android Manifest -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
-                android:name="com.mattrayner.vuforia.app.ImageTargets"
+                android:name="com.mattrayner.vuforia.samples.VuforiaSamples.app.CloudRecognition.CloudReco"
                 android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
                 android:screenOrientation="landscape"
                 android:noHistory="true">
