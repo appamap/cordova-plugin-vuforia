@@ -30,7 +30,7 @@
         <!-- Plugin Config -->
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="VuforiaPlugin" >
-                <param name="android-package" value="com.java.mattrayner.vuforia.VuforiaPlugin"/>
+                <param name="android-package" value="com.mattrayner.vuforia.VuforiaPlugin"/>
             </feature>
         </config-file>
         
