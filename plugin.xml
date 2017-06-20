@@ -45,10 +45,10 @@
         </config-file>
         
         <!-- Add our required strings -->
-        <config-file target="src/android/res/values/strings.xml" parent="/*">
-            <string name="button_OK">OK</string>
-        </config-file>
-        
+<!--        <config-file target="src/android/res/values/strings.xml" parent="/*">-->
+<!--            <string name="button_OK">OK</string>-->
+<!--        </config-file>-->
+
         <!-- Plugin Source -->
         <source-file src="src/android/java/com/mattrayner/vuforia/VuforiaPlugin.java" target-dir="src/com/mattrayner/vuforia" />
         
