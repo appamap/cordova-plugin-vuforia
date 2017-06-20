@@ -89,33 +89,33 @@
         
         <resource-file src="src/android/res/layout/camera_overlay.xml" target="res/layout/camera_overlay.xml" />
         
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRenderer.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRendererControl.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationControl.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationException.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/SampleApplicationSession.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRenderer.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRenderer.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRendererControl.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/SampleAppRendererControl.java" />
         
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeObject.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeShaders.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/LineShaders.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/LoadingDialogHandler.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/MeshObject.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplication3DModel.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplicationGLView.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleMath.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleUtils.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/Teapot.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/Texture.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/VideoBackgroundShader.java" target-dir="src/com/mattrayner/vuforia/samples/SampleApplication/utils" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeObject.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeObject.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeShaders.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/CubeShaders.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/LineShaders.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/LineShaders.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/LoadingDialogHandler.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/LoadingDialogHandler.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/MeshObject.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/MeshObject.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplication3DModel.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplication3DModel.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplicationGLView.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleApplicationGLView.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleMath.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleMath.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleUtils.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/SampleUtils.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/Teapot.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/Teapot.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/Texture.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/Texture.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/SampleApplication/utils/VideoBackgroundShader.java" target="src/com/mattrayner/vuforia/samples/SampleApplication/utils/VideoBackgroundShader.java" />
         
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudReco.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/app/CloudRecognition/CloudRecoRenderer.java" />
         
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu" />
-        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target-dir="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenu.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuAnimator.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuGroup.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuInterface.java" />
+        <source-file src="src/android/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" target="src/com/mattrayner/vuforia/samples/VuforiaSamples/ui/SampleAppMenu/SampleAppMenuView.java" />
         
         
         <!--<source-file src="src/android/com/mattrayner/vuforia/app/ImageTargetRenderer.java"
